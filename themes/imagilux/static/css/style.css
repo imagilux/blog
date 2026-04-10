@@ -200,7 +200,6 @@ header nav a:hover {
 /* Main Content */
 main.container {
     flex: 1;
-    min-height: var(--main-height);
     flex-direction: column;
     width: var(--container-width);
     max-width: var(--container-width);
@@ -208,7 +207,7 @@ main.container {
 }
 
 article {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xs);
 }
 
 h1,
@@ -286,13 +285,14 @@ footer.container p {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     background-size: cover;
     background-position: center;
-    min-height: var(--main-height);
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     flex-flow: column;
+    padding-top: calc(var(--header-height) + var(--spacing-xl));
 }
 
 .homepage-hero::before {
@@ -331,6 +331,7 @@ footer.container p {
 .latest-articles {
     z-index: 2;
     padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+    width: 100%;
 }
 
 .articles-container {
@@ -339,16 +340,25 @@ footer.container p {
     padding: 0 var(--spacing-md);
 }
 
+/* When articles-container is a direct child of main (list pages), clear the fixed header */
+main > .articles-container {
+    padding-top: calc(var(--header-height) + var(--spacing-lg));
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .section-title {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
     color: var(--color-text);
 }
 
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
 }
 
 .article-card {
@@ -369,7 +379,7 @@ footer.container p {
 }
 
 .card-content {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
 }
 
 .card-title {
@@ -405,7 +415,7 @@ footer.container p {
 .card-summary {
     color: var(--color-text-light);
     line-height: 1.5;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
 }
 
 .read-more {
@@ -554,6 +564,63 @@ footer.container p {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Pagination Bar */
+.pagination-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: var(--font-size-small);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+
+.pagination-info {
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pagination-nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background var(--transition-fast);
+}
+
+.pagination-nav a:hover {
+    background: rgba(0, 123, 255, 0.1);
+    text-decoration: none;
+}
+
+.pagination-nav .page-current {
+    background: var(--color-text);
+    color: var(--color-background);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: var(--font-weight-semibold);
+}
+
+.pagination-nav .disabled {
+    color: var(--color-text-muted);
+    opacity: 0.4;
+    padding: 4px 10px;
+}
+
+.pagination-size {
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {
@@ -587,10 +654,15 @@ footer.container p {
 
     .homepage-hero {
         min-height: 100vh;
+        padding-top: calc(var(--header-height) + var(--spacing-xl) + 4vh);
     }
 
     .hero-content {
         margin-bottom: 30vh;
+    }
+
+    main > .articles-container {
+        padding-top: calc(var(--header-height) + var(--spacing-lg) + 2vh);
     }
 
     .hero-title {
@@ -608,6 +680,20 @@ footer.container p {
 
     .articles-container {
         padding: 0 var(--spacing-sm);
+    }
+
+    /* Pagination responsive */
+    .pagination-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-xs);
+        padding: 8px 12px;
+    }
+
+    .pagination-info,
+    .pagination-size {
+        width: 100%;
+        text-align: center;
     }
 
     /* Post content responsive */
