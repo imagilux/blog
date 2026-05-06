@@ -9,8 +9,6 @@ Yes, you read it correctly, your registration process sucks, it probably have to
 
 But all of that is nothing compared to websites that simply decide to broadly ignore some registration methods and/or services providers and goes crazy with your data and identy.
 
-===
-
 ## Your provider belong to us
 
 There is nothing making me more angry than someone trying to decide what’s good or bad for me.
