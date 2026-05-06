@@ -1,4 +1,4 @@
-baseURL = "https://www.imagilux.org/"
+baseURL = "https://blog.imagilux.org/"
 defaultContentLanguage = "en"
 theme = "imagilux"
 

@@ -65,13 +65,15 @@ jobs:
         run: '[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true'
 
       - name: Build with Hugo
+        # Don't pass --baseURL: actions/configure-pages computes it from
+        # the org root pages domain ("https://www.imagilux.org/blog"),
+        # but this repo serves from its own CNAME (blog.imagilux.org)
+        # — the mismatch produced /blog/css/... asset paths that 404'd.
+        # hugo.toml's static baseURL is the source of truth.
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: |
-          hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5.0.0
