@@ -44,3 +44,9 @@ enableEmoji = true
 [params.homepage]
   subtitle = "Explore our latest insights, stories, and discoveries"
   backgroundImage = "/images/2282bf1d-1088-417a-a357-e97e843c3173.jpg"  # Uncomment and set path to use custom background image
+
+# NOTE: the root-level markup.toml is NOT auto-loaded by Hugo (only files under
+# config/_default/ are merged), so goldmark settings must live here to take effect.
+[markup]
+  [markup.goldmark.renderer]
+    hardWraps = true  # render single newlines as <br> — matches the one-sentence-per-line writing style
