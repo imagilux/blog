@@ -1,5 +1,8 @@
 baseURL = "https://blog.imagilux.org/"
+title = "Imagilux"
 defaultContentLanguage = "en"
+languageCode = "en"
+languageName = "English"
 theme = "imagilux"
 
 enableRobotsTXT = true
@@ -40,6 +43,16 @@ enableEmoji = true
   name = "Blog"
   pageRef = "posts"
   weight = 10
+
+# -- Site params (consolidated from the old root-level languages.en.toml).
+# The theme reads site.Params.isoCode for the <html lang> attribute. The old
+# [params.author] block was intentionally dropped: the theme uses page-level
+# frontmatter `author`, not site-level author params. --
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
 
 [params.homepage]
   subtitle = "Explore our latest insights, stories, and discoveries"
