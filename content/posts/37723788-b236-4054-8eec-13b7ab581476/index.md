@@ -69,7 +69,7 @@ In addition to this UI madness, a few other issues arise.
 
 Mainly, a spam and information leak issue.
 
-Indeed, OIDC does solve your password management issue by acting as a mandatory for those websites, but yet, they need some information to correctly identify you.
+Indeed, OIDC does solve your password management issue by acting as a mandatory intermediary for those websites, but yet, they need some information to correctly identify you.
 
 Too many websites abuse the not optional information retrieval system of OIDC to force you to consent on your data usage.
 
@@ -198,7 +198,7 @@ If you’re a platform manager/developer or anyone who has control over what you
 
 Only ask for an email address, build up features that are worthwhile and a trusted relationship with your customers.
 
-Do not surrogate the customer registration to an endless list of required data and overly broad access rights to its account.
+Do not subject the customer registration to an endless list of required data and overly broad access rights to its account.
 
 You need that right later in the process? Then ask for it gently at the moment you require it and make sure you clearly list that authorization on its account security page.
 

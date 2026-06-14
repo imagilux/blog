@@ -1,5 +1,5 @@
 ---
-title: "Why I’ll (probably) never adopt Talos linux"
+title: "Why I’ll (probably) never adopt Talos Linux"
 date: 2025-09-10T20:05:00Z
 draft: false
 author: k0bayashi
@@ -18,9 +18,9 @@ So, SideroLabs with its publication made some valid points, but they very quickl
 
 ## SideroLabs is not an open-source company
 
-First of all, let’s remind you that SideroLabs open sourced Talos linux because they had no choice.
+First of all, let’s remind you that SideroLabs open sourced Talos Linux because they had no choice.
 
-Their distribution is a slim 12 binaries based linux, but upon those 12 binaries, only one (machined) is their own piece of software.
+Their distribution is a slim 12 binaries based Linux, but upon those 12 binaries, only one (machined) is their own piece of software.
 
 They have no other choice than to open source the 11 other binaries as commanded by the licenses of those softwares.
 
